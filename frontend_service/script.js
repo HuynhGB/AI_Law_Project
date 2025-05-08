@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
     send_to_AI.addEventListener('click', function () {
         const message = modified_question_1.value;
 
-        fetch('http://74.208.88.183:5000/api/process', {
+        fetch('/api/process', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
