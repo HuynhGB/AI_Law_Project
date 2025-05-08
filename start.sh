@@ -1,9 +1,15 @@
 #!/bin/bash
+set -e
 
-# Chạy Flask backend
+# Kích hoạt venv
+source /app/AI_service/venv/bin/activate
+
+# Chạy song song cả backend và frontend dùng `&`, nhưng theo dõi và giữ container sống:
 cd /app/AI_service
 python llm.py --host 0.0.0.0 &
 
-# Chạy frontend với HTTP server
 cd /app/frontend_service
-python3 -m http.server $FRONTEND_PORT --bind 0.0.0.0
+python3 -m http.server $FRONTEND_PORT --bind 0.0.0.0 &
+
+# Wait all background processes
+wait
