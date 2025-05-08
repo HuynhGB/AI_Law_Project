@@ -2,13 +2,15 @@ version: '3.8'
 
 services:
   ollama:
-    image: ollama/ollama
+    build:
+      context: .
+      dockerfile: Dockerfile.ollama
     ports:
       - "11434:11434"
     volumes:
       - ollama_data:/root/.ollama
-    command: sh -c "ollama pull tinyllama && ollama serve"
     restart: unless-stopped
+
 
   backend:
     build:
