@@ -1,13 +1,10 @@
 FROM ubuntu:22.04
 
-# Cài các tool cần thiết
 RUN apt-get update && \
     apt-get install -y curl bash && \
     curl -fsSL https://ollama.com/install.sh | bash
 
-# Copy entrypoint script vào container
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
-# Set entrypoint
 ENTRYPOINT ["/entrypoint.sh"]
