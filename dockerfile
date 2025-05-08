@@ -9,6 +9,7 @@ ENV PYTHONUNBUFFERED=1 \
 RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-venv \
     build-essential \
+    curl \
     gcc \
     g++ \
     cmake \
@@ -19,6 +20,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
+
 RUN python3 -m venv $VENV_PATH
 ENV PATH="$VENV_PATH/bin:$PATH"
 
@@ -27,7 +29,6 @@ RUN pip install --upgrade pip && pip install -r /tmp/requirements.txt --no-cache
 
 COPY . .
 
-COPY start.sh /app/start.sh
 RUN chmod +x /app/start.sh
 
 EXPOSE $AI_SERVICE_PORT
