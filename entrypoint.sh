@@ -2,7 +2,7 @@
 set -e
 
 # Start the Ollama daemon in the background
-ollama serve &
+ollama serve --host 0.0.0.0 &
 
 # Wait until Ollama daemon is ready
 until curl -s http://localhost:11434 > /dev/null; do
