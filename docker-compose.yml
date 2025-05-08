@@ -7,7 +7,7 @@ services:
       - "11434:11434"
     volumes:
       - ollama_data:/root/.ollama
-    command: bash -c "ollama pull tinyllama && ollama serve"
+    command: sh -c "ollama pull tinyllama && ollama serve"
     restart: unless-stopped
 
   backend:
