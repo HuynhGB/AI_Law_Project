@@ -1,9 +1,0 @@
-FROM ubuntu:22.04
-
-# Cài đặt curl và ollama
-RUN apt-get update && \
-    apt-get install -y curl bash && \
-    curl -fsSL https://ollama.com/install.sh | bash
-
-# Mặc định chạy ollama serve
-CMD bash -c "ollama pull tinyllama && ollama serve"
