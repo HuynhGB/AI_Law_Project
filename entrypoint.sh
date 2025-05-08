@@ -1,8 +1,10 @@
 #!/bin/bash
 set -e
 
+export OLLAMA_HOST=0.0.0.0
+
 # Start the Ollama daemon in the background
-ollama serve --host 0.0.0.0 &
+ollama serve &
 
 # Wait until Ollama daemon is ready
 until curl -s http://localhost:11434 > /dev/null; do
