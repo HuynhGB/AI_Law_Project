@@ -11,7 +11,6 @@ services:
       - ollama_data:/root/.ollama
     restart: unless-stopped
 
-
   backend:
     build:
       context: .
