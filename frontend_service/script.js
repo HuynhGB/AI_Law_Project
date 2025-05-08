@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     send_to_AI.addEventListener('click', function() {
         const message = modified_question_1.value;
 
-        fetch('http://127.0.0.1:5000/api/process', {
+        fetch('http://74.208.88.183:5000/api/process', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     function fetchData(){
-        fetch('http://127.0.0.1:5000/api/process')
+        fetch('http://74.208.88.183:5000/api/process')
                 .then(response => response.json())
                 .then(data => {
                   const list = document.getElementById('result');
