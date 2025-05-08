@@ -1,8 +1,9 @@
-# Dockerfile.ollama
-FROM ollama/ollama
+FROM ubuntu:22.04
 
-# Thêm shell vào (do image gốc không có sh/bash)
-RUN apk add --no-cache bash
+# Cài đặt curl và ollama
+RUN apt-get update && \
+    apt-get install -y curl bash && \
+    curl -fsSL https://ollama.com/install.sh | bash
 
-# Pull model và chạy server
+# Mặc định chạy ollama serve
 CMD bash -c "ollama pull tinyllama && ollama serve"
