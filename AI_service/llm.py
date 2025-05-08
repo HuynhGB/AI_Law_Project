@@ -11,7 +11,7 @@ ollama_url = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
 llm = Ollama(base_url=ollama_url, model="tinyllama")
 
 # Thêm độ trễ khi khởi động (tính bằng giây)
-STARTUP_DELAY = 5
+STARTUP_DELAY = 20
 print(f"Đang chờ {STARTUP_DELAY} giây trước khi sẵn sàng...")
 time.sleep(STARTUP_DELAY)
 print("Ứng dụng đã sẵn sàng.")
