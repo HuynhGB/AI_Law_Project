@@ -1,0 +1,8 @@
+# Dockerfile.ollama
+FROM ollama/ollama
+
+# Thêm shell vào (do image gốc không có sh/bash)
+RUN apk add --no-cache bash
+
+# Pull model và chạy server
+CMD bash -c "ollama pull tinyllama && ollama serve"
