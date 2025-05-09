@@ -1,5 +1,4 @@
 version: '3.8'
-
 services:
   ollama:
     build:
@@ -14,8 +13,9 @@ services:
       test: ["CMD", "curl", "-f", "http://localhost:11434"]
       interval: 10s
       timeout: 5s
-      retries: 5
-
+      retries: 10
+      start_period: 30s
+  
   backend:
     build:
       context: .
@@ -30,6 +30,12 @@ services:
       - OLLAMA_BASE_URL=http://ollama:11434
       - FRONTEND_PORT=5500
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/api/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 25s
 
 volumes:
   ollama_data:
