@@ -1,9 +1,10 @@
 # LLM in Law consultancy service
 ## Giới thiệu
-  - Chương trình được xây dựng nhằm mục đích hỗ trợ người dân về các vấn đề liên quan đến luật pháp. Đây là ứng dụng nhắm đến những người có hoàn cảnh khó khăn và không thể chi trả các khoảng phí cho buổi tư vấn của luật sư.
-  - Ỡ đây chúng ta sử dụng mô hình tinyllama, ta có thể thay đổi mô hình dựa tuỳ thuộc vào cấu hình máy của server.
-  - Đây chỉ mới là prototype của chương trình và vẫn còn đang tiếp tục hoàn thiện chương trình.
+  - Chương trình được phát triển nhằm hỗ trợ người dân trong việc tiếp cận thông tin pháp luật, đặc biệt là những đối tượng có hoàn cảnh khó khăn và không đủ điều kiện tài chính để chi trả cho các buổi tư vấn pháp lý truyền thống.
+  - Ứng dụng sử dụng mô hình ngôn ngữ TinyLlama để xử lý và tạo phản hồi cho các câu hỏi pháp lý. Tùy thuộc vào cấu hình máy chủ, mô hình có thể được thay đổi để phù hợp với năng lực xử lý hiện tại.
+  - Đây là phiên bản prototype của hệ thống và vẫn đang trong quá trình hoàn thiện để nâng cao hiệu quả và trải nghiệm người dùng.
 
 ## Quy trình
-  - Đầu tiên, người dân hoặc khách hàng sẽ điền câu hỏi của mình vào ô trống, sau đó gửi câu hỏi cho luật sư (admin của ứng dụng này). Kế đến, admin sẽ điểu chỉnh câu hỏi của khách hàng sao cho hợp lý và đúng ngữ cảnh để đưa câu hỏi vào mô hình LLM cho nó trả lời.
-  - Tiếp đến, khi mô hình LLM xuất ra kết quả, admin có nhiệm vụ là điều chỉnh lại câu trả lời và sau đó gửi nó đến khách hàng hoặc người dân đang cần sự giúp đỡ.
+  - Người dân hoặc khách hàng sẽ nhập câu hỏi pháp lý vào ô nhập liệu trên giao diện ứng dụng và gửi yêu cầu đến hệ thống.
+  - Sau đó một luật sư (admin) sẽ tiếp nhận, rà soát và điều chỉnh nội dung câu hỏi nhằm đảm bảo tính rõ ràng, đầy đủ và phù hợp với ngữ cảnh trước khi chuyển đến mô hình LLM để xử lý.
+  - Sau khi mô hình LLM tạo ra phản hồi, admin sẽ đánh giá, chỉnh sửa và hoàn thiện câu trả lời để đảm bảo độ chính xác và dễ hiểu trước khi gửi lại cho người dùng cuối.
